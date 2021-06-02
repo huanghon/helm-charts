@@ -22,8 +22,14 @@ serviceAccount:
   name: ""
 
 service:
-  type: ClusterIP
+  type: LoadBalancer
   port: 80
+  httpsPort: 443
+  nodePorts:
+    http: ""
+    https: ""
+  annotations: {}
+  externalTrafficPolicy: Cluster
 
 ingress:
   enabled: false
